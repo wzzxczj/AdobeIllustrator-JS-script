@@ -102,12 +102,19 @@ var group1 = activeDocument.groupItems.add();
 regYuan.moveToEnd(group1); 
 line.moveToEnd(group1); 
 line1.moveToEnd(group1); 
-
+/*
 //复制
 var group2 = group1.translate(myBounds[2]-myBounds[0]-(dRegYuan+rCircle+ lRegXian)*2,0); 
 var group3 = group1.translate(0,myBounds[3]-myBounds[1]+lRegXian*2); 
 var group4 = group2.translate(0,myBounds[3]-myBounds[1]+lRegXian*2); 
- //再群组 
+ */
+var group2 = group1.duplicate();
+group2.translate(myBounds[2]-myBounds[0]-(dRegYuan+rCircle+ lRegXian)*2,0); 
+var group3 = group1.duplicate(); 
+group3.translate(0,myBounds[3]-myBounds[1]+lRegXian*2); 
+var group4 = group2.duplicate(); 
+group4.translate(0,myBounds[3]-myBounds[1]+lRegXian*2); 
+//再群组 
 var group5 = activeDocument.groupItems.add();
 group1.moveToEnd(group5); 
 group2.moveToEnd(group5); 
