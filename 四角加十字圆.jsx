@@ -28,49 +28,6 @@ var dCircle = rCircle * 2;
 var myBounds = firstSelection.geometricBounds;
 var myPosition = firstSelection.position;
 
-//设置MARK点坐标
-var xMARKz = myBounds[0] - rCircle;
-var yMARKs = myBounds[1] + rCircle ;
-var xMARKy = myBounds[2] - rCircle;
-var yMARKx = myBounds[3] + rCircle ;
-
- //画4个MARK点
-var eYuan = doc.activeLayer.pathItems.ellipse(yMARKs, xMARKz, dCircle, dCircle, false, true );
-var eYuan1 = doc.activeLayer.pathItems.ellipse(yMARKs, xMARKy, dCircle, dCircle, false, true );
-var eYuan2 = doc.activeLayer.pathItems.ellipse(yMARKx, xMARKz, dCircle, dCircle, false, true );
-var eYuan3 = doc.activeLayer.pathItems.ellipse(yMARKx, xMARKy, dCircle, dCircle, false, true );
-
-//设置MARK点为单色填充无描边
-newCMYKColor = new CMYKColor();
-newCMYKColor.black = 100;
-newCMYKColor.cyan = 0;
-newCMYKColor.magenta = 0;
-newCMYKColor.yellow = 0;
-// 1
-eYuan.filled = true;
-eYuan.fillColor = newCMYKColor;
-eYuan.stroked = false; 
-//2
-eYuan1.filled = true;
-eYuan1.fillColor = newCMYKColor;
-eYuan1.stroked = false; 
-//3
-eYuan2.filled = true;
-eYuan2.fillColor = newCMYKColor;
-eYuan2.stroked = false; 
-//4
-eYuan3.filled = true;
-eYuan3.fillColor = newCMYKColor;
-eYuan3.stroked = false; 
-
-//新建群组
-var group = activeDocument.groupItems.add();
-//加点到群组
-eYuan.moveToEnd(group); 
-eYuan1.moveToEnd(group); 
-eYuan2.moveToEnd(group); 
-eYuan3.moveToEnd(group); 
- 
 //设置十字圆直径 和 大半径
 var dRegYuan = new UnitValue (2.5, "mm").as("pt"); 
 var lRegXian = new UnitValue (1.5, "mm").as("pt"); 
@@ -130,6 +87,8 @@ group2.moveToEnd(group5);
 group3.moveToEnd(group5); 
 group4.moveToEnd(group5); 
 
+
 } else {
-    alert("请选中对象做圆点MARK标记");
+//警告
+    alert("请选中对象以做套准标记");
 }
