@@ -5,7 +5,8 @@ if (nSel > 0) {
 //脚本内容
 var doc = app.activeDocument;
 var sel = doc.selection[0];
-var text = doc.textFrames.add();
+//var text = doc.textFrames.add();
+var text = doc.activeLayer.textFrames.add();
 
 text.contents = "晒350目/印反";
 //字号

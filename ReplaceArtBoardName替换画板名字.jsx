@@ -28,15 +28,18 @@ if (app.documents.length === 0) {
 var doc = app.activeDocument;
 
 var dialog = new Window("dialog", "Find and Replace");
-dialog.alignChildren = "left";
+dialog.alignChildren = "right";
+//dialog.alignChildren = "left";
 
 var findGroup = dialog.add("group");
 findGroup.add("statictext", undefined, "Find:");
-var findInput = findGroup.add("edittext", undefined, "");
+var findInput = findGroup.add("edittext",  [0, 0, 110, 25], "");
+//findInput.characters = 54;
 
 var replaceGroup = dialog.add("group");
 replaceGroup.add("statictext", undefined, "Replace:");
-var replaceInput = replaceGroup.add("edittext", undefined, "");
+var replaceInput = replaceGroup.add("edittext",  [0, 0, 110, 25], "");
+//replaceInput.characters = 52;
 
 var buttonGroup = dialog.add("group");
 var cancelButton = buttonGroup.add("button", undefined, "Cancel");
