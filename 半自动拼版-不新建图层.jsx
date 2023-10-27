@@ -34,6 +34,10 @@ if (nSel < 1) {
         cInput.characters = 4;
         cblankInput.characters = 4;
 
+    var groupCheckbox = dialog.add('group');
+        groupCheckbox.orientation = 'row';
+    var toGroupCheckbox = groupCheckbox.add('checkbox', undefined, '群组');
+
     var textGroup = dialog.add("group");
         textGroup.add("statictext", undefined, "选中了" + nSel + "个物件");
 
@@ -60,9 +64,10 @@ if (nSel < 1) {
                 var a = parseInt(rInput.text);
                 var b = parseInt(cInput.text);
                
-                //启用当前图层
-                var Group1 = app.activeDocument.activeLayer.groupItems.add();
-                 
+                if(toGroupCheckbox.value){
+                    var Group1 = app.activeDocument.activeLayer.groupItems.add();//启用当前图层的群组
+                }
+                //遍历所有物件
                 for (var row = 0; row < a; row++) {
                     for (var col = 0; col < b; col++) {
                 
@@ -73,11 +78,12 @@ if (nSel < 1) {
                         var itemcopy = item.duplicate();
                         // We move the copy to the current cell position
                         itemcopy.position = [x, y];
-                        itemcopy.moveToEnd(Group1); 
-
+                        //当群组复选框勾上时启动群组功能
+                        if(toGroupCheckbox.value){
+                            itemcopy.moveToEnd(Group1); 
+                        }
                     }
                 }
-            
                 item.remove();
             }
             dialog.close();
