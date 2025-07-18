@@ -1,0 +1,1 @@
+LoadHistory([({fontName:"阿里巴巴普惠体", regex:"^[^0-9].+$", target:"selection", style:"Medium", FUNCS_option:undefined})]);

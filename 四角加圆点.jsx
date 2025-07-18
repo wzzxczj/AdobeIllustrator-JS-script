@@ -59,7 +59,7 @@ eYuan3.fillColor = newCMYKColor;
 eYuan3.stroked = false; 
 
 //新建群组
-var group = activeDocument.groupItems.add();
+var group = doc.activeLayer.groupItems.add();
 //加点到群组
 eYuan.moveToEnd(group); 
 eYuan1.moveToEnd(group); 
