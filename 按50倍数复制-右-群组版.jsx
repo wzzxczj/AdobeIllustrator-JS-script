@@ -1,4 +1,4 @@
-var doc = app.activeDocument;  
+﻿var doc = app.activeDocument;  
 var selectedItems = doc.selection;
 var sell = selectedItems.length;
 var firstSelection = doc.selection[0];
@@ -43,8 +43,8 @@ if(sell > 0) {
         firstSelection = doc.selection[0];
     }
    
-    //给长度加个25
-    totalWidth += new UnitValue (25, "mm").as("pt");
+    //给长度加个10
+    totalWidth += new UnitValue (10, "mm").as("pt");
     //转单位为MM
     displayWidth = new UnitValue (totalWidth,"pt").as("mm");
     //按50的比例取整

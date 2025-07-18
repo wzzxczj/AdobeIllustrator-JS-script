@@ -11,7 +11,7 @@ if(sell > 0) {
         //新建群组
         
         //AA
-        //*
+        /*
         var group0 = doc.activeLayer.groupItems.add();
         //把每个物件加到群组里
         for (var i = 0; i < sell; i++) {
@@ -23,11 +23,10 @@ if(sell > 0) {
         totalheight = group0.height;
         // 解散群组
         app.executeMenuCommand("ungroup");
-        //**/
+        **/
         //AA/
 
         //BB
-        /*
         //改用Illustrator里的群组菜单，方便回退原图层
         
         app.executeMenuCommand("group");
@@ -36,7 +35,6 @@ if(sell > 0) {
         totalheight = firstSelection.height;
         //app.executeMenuCommand("undo");
         app.undo();
-        **/
         //BB/
         // 更新选中物件
         selectedItems = doc.selection;
